@@ -14,7 +14,11 @@ The best performing model was VotingEnsemble model obtained from AutoML which ou
 ## Scikit-learn Pipeline
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
 
+
 **What are the benefits of the parameter sampler you chose?**
+I chose to use Random Sampling. 
+The main benefits include its support for termination of low-performance runs and the other one is that it supports both continuos and discrete parameters.
+There were two parameters passed, one was continuos that is regularization parameter '--C' where a uniformly distributed value distributed between (-.-5,0.1) will be chosen at every iteration and a discrete parameter '--max_iter' which had a choice of value between (16,32,64,128).
 
 **What are the benefits of the early stopping policy you chose?**
 
