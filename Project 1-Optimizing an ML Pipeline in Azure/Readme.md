@@ -13,11 +13,14 @@ The best performing model was VotingEnsemble model obtained from AutoML which ou
 
 ## Scikit-learn Pipeline
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
-**Architecture of train.py file**
-*Following are the operations performed by train.py script
-*
-
-
+## Architecture of train.py file 
+Following are the operations performed by train.py script
+1. First, the important libraries are imported.
+2. Used TabularDatasetFactory to import the data.
+3. clean_data function is used to clean and one hot encode the data. It returns the x and y data where x is containing the whole data on which training and testing needs to be      done,whereas y contains the labels.
+4. x_train, x_test, y_train, y_test are made by splitting x and y where test_size = 0.3 and random_state = 42
+5. Another function is 'main', where LogisticRegression model fits the data and is returned to model variable and the accuracy is calculated.The results are stored in the          outputs folder.
+## HyperDrive and Hyperparameter tuning
 
 **Benefits of the parameter sampler chosen**
 I chose Random Sampling. 
