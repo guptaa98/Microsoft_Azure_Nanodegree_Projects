@@ -21,7 +21,24 @@ Following are the operations performed by train.py script
 4. x_train, x_test, y_train, y_test are made by splitting x and y where test_size = 0.3 and random_state = 42
 5. Another function is 'main', where LogisticRegression model fits the data and is returned to model variable and the accuracy is calculated.The results are stored in the          outputs folder.
 ## HyperDrive and Hyperparameter tuning
-
+hyperdrive_config = HyperDriveConfig (estimator = est,
+                             hyperparameter_sampling = ps,
+                             policy = policy,
+                             primary_metric_name = "Accuracy",
+                             primary_metric_goal = PrimaryMetricGoal.MAXIMIZE,
+                             max_total_runs = 50,
+                             max_concurrent_runs = 3
+                             )
+The description of hyperdrive configuration are as follows - 
+1. A sklearn estimator is created for interacting with train.py file. The source directory, the entry script and compute target are passed to the variable est.
+2. Random Parameter Sampler is chosed to be used and is stored in ps variable.
+3. Bandit Policy is used as an early stopping policy which terminates runs where the primary metric is not within the specified slack factor compared to the best performing run.
+   The runs which have the primary metric value less than (best performing run metric/(1+slack_factor)) are terminated.
+4. primary_metric_goal can be either PrimaryMetricGoal.MAXIMIZE or PrimaryMetricGoal.MINIMIZE determining if the primary metric will be maximized or minimized when evaluating      the runs.
+5. The name of the primary metric needs to exactly match the name of the metric logged by the training script i.e. train.py and here it is Accuracy.
+6. max_total_runs contains the value maximum training runs that are to be run. The value should be between 1-1000.
+7. max_concurrent_runs contains the maximum number of runs that can run concurrently i.e at the same time. If not specified, all runs launch in parallel. The value must be an      integer between 1 and 100.
+**The best model obtained from using hyperdrive gave and accuracy of 0.9111785533636824.** 
 **Benefits of the parameter sampler chosen**
 I chose Random Sampling. 
 The main benefits include its support for termination of low-performance runs and the other one is that it supports both continuos and discrete parameters.
