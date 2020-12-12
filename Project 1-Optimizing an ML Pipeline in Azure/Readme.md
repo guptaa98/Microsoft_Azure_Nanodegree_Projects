@@ -13,6 +13,9 @@ The best performing model was VotingEnsemble model obtained from AutoML which ou
 
 ## Scikit-learn Pipeline
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
+**Architecture of train.py file**
+*Following are the operations performed by train.py script
+*
 
 
 
