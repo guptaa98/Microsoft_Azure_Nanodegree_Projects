@@ -63,6 +63,8 @@ The problem we solved here was a binary classification problem having 2 categori
     n_cross_validations=5)
 4. The AutoML run is submitted and the best model is retrived and saved.
    The snippets of output are shown below.
+   ![Screenshot 2020-12-16 013859](https://user-images.githubusercontent.com/46073909/102267243-a2197900-3f3f-11eb-8e64-b174ad4b7c3f.jpg)
+
    
 ## Pipeline comparison
 **Compare the two models and their performance. What are the differences in accuracy? In architecture? If there was a difference, why do you think there was one?**
