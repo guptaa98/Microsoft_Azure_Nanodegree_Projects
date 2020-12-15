@@ -64,8 +64,9 @@ The problem we solved here was a binary classification problem having 2 categori
 4. The AutoML run is submitted and the best model is retrived and saved.
    The snippets of output are shown below.
    ![Screenshot 2020-12-16 013859](https://user-images.githubusercontent.com/46073909/102267243-a2197900-3f3f-11eb-8e64-b174ad4b7c3f.jpg)
+   ![acc](https://user-images.githubusercontent.com/46073909/102267367-cb3a0980-3f3f-11eb-8d8b-ec2a5ac04709.jpg)
+   ![best run](https://user-images.githubusercontent.com/46073909/102267468-f45a9a00-3f3f-11eb-92a8-85c9f80ae0c6.jpg)
 
-   
 ## Pipeline comparison
 **Compare the two models and their performance. What are the differences in accuracy? In architecture? If there was a difference, why do you think there was one?**
 
