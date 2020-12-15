@@ -31,7 +31,7 @@ hyperdrive_config = HyperDriveConfig (estimator = est,
                              )
 The description of hyperdrive configuration are as follows - 
 1. A sklearn estimator is created for interacting with train.py file. The source directory, the entry script and compute target are passed to the variable est.
-2. Random Parameter Sampler is chosed to be used and is stored in ps variable.
+2. Random Parameter Sampler is chosen to be used and is stored in ps variable.
    **Benefits**
    The main benefits include its support for termination of low-performance runs and the other one is that it supports both continuos and discrete parameters.
    There were two parameters passed, one was continuos that is regularization parameter '--C' where a uniformly distributed value distributed between (-.-5,0.1) will be chosen      at every iteration and a discrete parameter '--max_iter' which had a choice of value between (16,32,64,128).
@@ -69,9 +69,16 @@ The problem we solved here was a binary classification problem having 2 categori
 
 ## Pipeline comparison
 **Compare the two models and their performance. What are the differences in accuracy? In architecture? If there was a difference, why do you think there was one?**
+The approach using hyperdrive only uses the machine learning model that has been provided to it. Hyperdrive recieves parameters to perform hyperparameter tuning which is the process of finding the configuration of hyperparameters that results in the best performance.
+AutoML on the other hand runs a lot of different machine learning algorithms and returns the one which gives the highest primary metric i.e., the best model.
+
+In this project it was found that AutoML approach outperformed the HyperDrive approach.
+## Accuracy of Hyperdrive - 0.9111785533636824.
+## Accuracy of AutoML - 0.91692288 , Best Model - VotingEnsemble model
 
 ## Future work
-**What are some areas of improvement for future experiments? Why might these improvements help the model?**
+**In hyperdrive** - 1. Different Early Termination Policy can be used. Experiments can be done with max total runs and concurrent runs.                                                               2. If computational expense is not an issue one can avoid early termination policy.
+**In AutoML** - 1. Experiment timeout minutes can be increased or avoided. One can choose to use different primary metric too.
 
 ## Proof of cluster clean up
 **If you did not delete your compute cluster in the code, please complete this section. Otherwise, delete this section.**
