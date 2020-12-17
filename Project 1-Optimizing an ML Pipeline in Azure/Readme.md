@@ -45,6 +45,11 @@ The description of hyperdrive configuration are as follows -
 6. max_total_runs contains the value maximum training runs that are to be run. The value should be between 1-1000.
 7. max_concurrent_runs contains the maximum number of runs that can run concurrently i.e at the same time. If not specified, all runs launch in parallel. The value must be an      integer between 1 and 100.
 **The best model obtained from using hyperdrive gave and accuracy of 0.9111785533636824.**
+Have a look at the run details and scatter charts
+![2d scatter chart](https://user-images.githubusercontent.com/46073909/102512400-00fe0000-40b0-11eb-8c95-2d09cfd431b6.jpg)
+![scatter chart](https://user-images.githubusercontent.com/46073909/102512412-03605a00-40b0-11eb-83cf-06bf40981976.jpg)
+![run widget](https://user-images.githubusercontent.com/46073909/102512424-078c7780-40b0-11eb-8bb0-7e6b6eb48109.jpg)
+
 **Logistic Regression**
 ## Logistic Regression 
 This model is used when the value to be predicted is categorical. 
