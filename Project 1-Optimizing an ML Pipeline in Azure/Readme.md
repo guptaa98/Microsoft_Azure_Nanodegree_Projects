@@ -79,6 +79,3 @@ In this project it was found that AutoML approach outperformed the HyperDrive ap
 ## Future work
 **In hyperdrive** - 1. Different Early Termination Policy can be used. Experiments can be done with max total runs and concurrent runs.                                                               2. If computational expense is not an issue one can avoid early termination policy.                                                                           **In AutoML** - 1. Experiment timeout minutes can be increased or avoided. One can choose to use different primary metric too.
 
-## Proof of cluster clean up
-**If you did not delete your compute cluster in the code, please complete this section. Otherwise, delete this section.**
-**Image of cluster marked for deletion**
