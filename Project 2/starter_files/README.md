@@ -112,4 +112,3 @@ Use RunDetailsWidget showing step runs
 ## Screen Recording
 The screencast of my project can be found here.
 https://drive.google.com/file/d/1c6d4M0sbfU1MmNNYyCqlXicq2EtS-w2y/view?usp=sharing
-
