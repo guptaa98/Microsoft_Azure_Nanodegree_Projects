@@ -8,6 +8,7 @@ Microsft Azure was used to configure a cloud-based machine learning production m
 ## Key Steps
 **Step 1: Authenication**
 Used the lab provided by udacity so this step was skipped.
+
 **Step 2: Create and run Auto ML Experiment**
 1. Uploaded the bank marketing dataset to Azure.
 2. A new Compute Cluster was made with Standard_DS12_v2 as the vm and 1 as the minimum number of nodes. Max number of nodes were 5.
