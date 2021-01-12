@@ -11,11 +11,12 @@ Microsft Azure was used to configure a cloud-based machine learning production m
 Used the lab provided by udacity so this step was skipped.
 
 ### Step 2: Create and run Auto ML Experiment
-
 1. Uploaded the bank marketing dataset to Azure.
 2. A new Compute Cluster was made with Standard_DS12_v2 as the vm and 1 as the minimum number of nodes. Max number of nodes were 5.
-3. Used the above dataset to create an automl run experiment using classification with target column as 'y'. The Exit Criteria was 1 hour and concurrency was set to 5. 
+3. Used the above dataset to create an automl run experiment using classification with target column as 'y'.The Exit Criteria was 1 hour and concurrency was set to 5. 
+
 **Screenshots**
+
 Registered Dataset showing that the dataset is available
 ![registered dataset](https://user-images.githubusercontent.com/46073909/104363813-bd29d980-553b-11eb-8516-5ebdcdf1003c.jpg)
 
@@ -38,7 +39,9 @@ Now that the Best Model is deployed, in this step we will enable Application Ins
 2. Replaced the default model name in the script with our deployed model name and then ran *python logs.py* in git-bash. 
 3. We are going to see some results in the terminal and when we go back to our Azure studio we'll see that the application insights were enabled (True). 
    Application Insight URL was available which gave all the information regarding Server Requests, Server Response Time, Failed Requests and availability.
+   
 **Screenshots**
+
 logs.py running
 ![logs py result 1](https://user-images.githubusercontent.com/46073909/104364490-ae8ff200-553c-11eb-8402-5ac28fc2ecba.jpg)
 ![logs py result 2](https://user-images.githubusercontent.com/46073909/104364495-b059b580-553c-11eb-8c3f-64759895283a.jpg)
@@ -53,7 +56,9 @@ In this step, we will consume the deployed model using Swagger.
 2. swagger.sh will download the latest Swagger container, and it will run it on port 80 by default. Since permission for port 80 on your computer wasn't granted, updated the port to 9000.
 3. Used gitbash to run the Serve.py and Swagger.sh files.
 4. Observed the contents of the API for the model using HTTP API responses and methods.
+
 **Screenshots**
+
 Screenshot showing swagger runs on locahost showing HTTP API methods and responses for the model
 ![swagger response](https://user-images.githubusercontent.com/46073909/104364697-fca4f580-553c-11eb-90dc-87bd9f207e47.jpg)
 ![swagger response 2](https://user-images.githubusercontent.com/46073909/104364691-fadb3200-553c-11eb-9067-1267244a1a90.jpg)
@@ -67,7 +72,9 @@ Since the model is deployed, we'll use the endpoint.py script provided to intera
 1. Updated the scoring_uri with REST endpoint URL and key with primary key of the deployed model.
 2. Executed *python endpoint.py* and the results were similar to {results : ["yes","no"]}.
 3. data.json file was also downloaded
+
 **Screenshots**
+
 endpoint.py runs 
 ![endpoint resp](https://user-images.githubusercontent.com/46073909/104365081-8d7bd100-553d-11eb-9d4b-8aad09968a7d.jpg)
 
@@ -80,7 +87,9 @@ data.json file is produced as an output from the model
 2. All the variables were updated to match our environment.
 3. config.json file was downloaded and was available in the current working directory.
 4. Pipeline was created and scheduled to run. 
+
 **Screenshots**
+
 Pipeline section of azure studio showing that the pipeline was created
 ![pipeline is created](https://user-images.githubusercontent.com/46073909/104365302-d895e400-553d-11eb-9dc4-8075d0509b57.jpg)
 
