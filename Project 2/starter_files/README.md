@@ -43,6 +43,7 @@ In this step, we will consume the deployed model using Swagger.
 Since the model is deployed, we'll use the endpoint.py script provided to interact with the trained model.
 1. Updated the scoring_uri with REST endpoint URL and key with primary key of the deployed model.
 2. Executed *python endpoint.py* and the results were similar to {results : ["yes","no"]}.
+3. data.json file was also downloaded
 
 **Step 7: Create, Publish and Consume a Pipeline**
 
