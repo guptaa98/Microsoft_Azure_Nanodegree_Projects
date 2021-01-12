@@ -48,8 +48,10 @@ Since the model is deployed, we'll use the endpoint.py script provided to intera
 
 1. Uploaded the provided notebook to azure.
 2. All the variables were updated to match our environment.
-## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
+3. config.json file was downloaded and was available in the current working directory.
+4. Pipeline was created and scheduled to run. 
 
-## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
+## Screen Recording
+The screencast of my project can be found here.
+
+
