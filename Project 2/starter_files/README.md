@@ -3,7 +3,7 @@ This project is part of the Udacity Azure ML Nanodegree. In this project, I've w
 Microsft Azure was used to configure a cloud-based machine learning production model, deploy it, and consume it. We will also create, publish, and consume a pipeline using Azure Python SDK.
 
 ## Architectural Diagram
-*TODO*: Provide an architectual diagram of the project and give an introduction of each step.
+![blk diagram](https://user-images.githubusercontent.com/46073909/104422247-820ec100-55a2-11eb-84d6-830246ab2612.png)
 
 ## Key Steps
 ### Step 1: Authenication
