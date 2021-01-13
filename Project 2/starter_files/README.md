@@ -1,6 +1,8 @@
 # Operationalizing Machine Learning
 This project is part of the Udacity Azure ML Nanodegree. In this project, I've worked with the Bank Marketing dataset which contains 21 features and we had to predict whether a person will take a loan or not. The was our target column y. 
 Microsft Azure was used to configure a cloud-based machine learning production model, deploy it, and consume it. We will also create, publish, and consume a pipeline using Azure Python SDK.
+The dataset can be downloaded from here
+https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv
 
 ## Architectural Diagram
 ![blk diagram](https://user-images.githubusercontent.com/46073909/104422247-820ec100-55a2-11eb-84d6-830246ab2612.png)
