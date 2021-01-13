@@ -114,3 +114,9 @@ Use RunDetailsWidget showing step runs
 ## Screen Recording
 The screencast of my project can be found here.
 https://drive.google.com/file/d/1c6d4M0sbfU1MmNNYyCqlXicq2EtS-w2y/view?usp=sharing
+
+## Future Improvements
+There are few areas which according to me can be improved
+1. We can increase the experiment_timeout_minutes. In this code it is set to 15 minutes but can be increased to a higher number like 20-30 minutes.
+2. We can use different primary metric and can observe if the accuracy of the model changes or not.
+3. Since here we have a lot of features (20 in number to  predict target) we can perform some feature engineering and remove the unecessary features. This in turn would prevent overfitting i.e. the model would generalise itself more and hence will give a high accuracy when it sees test data.
