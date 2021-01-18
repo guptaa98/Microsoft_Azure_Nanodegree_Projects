@@ -50,7 +50,7 @@ def main():
 
     accuracy = model.score(x_test, y_test)
     run.log("Accuracy", np.float(accuracy))
-    clean_data(ds)
+
 
 if __name__ == '__main__':
     main()
