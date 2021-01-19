@@ -1,6 +1,3 @@
-Python 3.7.0 (v3.7.0:1bf9cc5093, Jun 27 2018, 04:59:51) [MSC v.1914 64 bit (AMD64)] on win32
-Type "copyright", "credits" or "license()" for more information.
->>> 
 from sklearn.linear_model import LogisticRegression
 import argparse
 import os
@@ -14,17 +11,12 @@ from azureml.core.run import Run
 from azureml.data.dataset_factory import TabularDatasetFactory
 
 from azureml.data.dataset_factory import TabularDatasetFactory
-URL = "https://www.kaggle.com/ronitf/heart-disease-uci"
+URL = "https://raw.githubusercontent.com/guptaa98/Microsoft_Azure_Nanodegree_Projects/main/Captstone%20Project/heart.csv"
 ds = TabularDatasetFactory.from_delimited_files(path=URL)### YOUR CODE HERE ###
 
-y = pd.DataFrame()
-y['target'] = ds['target']
-x = pd.DataFrame()
-x = ds
-x.drop('target',axis = 1, inplace=True)
+x = ds.to_pandas_dataframe().dropna()
 
-
-#x, y = clean_data(ds)
+y = x.pop('target')
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=42)
 
@@ -50,7 +42,6 @@ def main():
 
     accuracy = model.score(x_test, y_test)
     run.log("Accuracy", np.float(accuracy))
-
 
 if __name__ == '__main__':
     main()
