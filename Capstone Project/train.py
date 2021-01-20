@@ -11,7 +11,7 @@ from azureml.core.run import Run
 from azureml.data.dataset_factory import TabularDatasetFactory
 
 from azureml.data.dataset_factory import TabularDatasetFactory
-URL = "https://raw.githubusercontent.com/guptaa98/Microsoft_Azure_Nanodegree_Projects/main/Captstone%20Project/heart.csv"
+URL = "https://raw.githubusercontent.com/guptaa98/Microsoft_Azure_Nanodegree_Projects/main/Capstone%20Project/heart.csv"
 ds = TabularDatasetFactory.from_delimited_files(path=URL)### YOUR CODE HERE ###
 
 x = ds.to_pandas_dataframe().dropna()
