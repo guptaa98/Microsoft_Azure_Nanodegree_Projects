@@ -48,17 +48,30 @@ ds = TabularDatasetFactory.from_delimited_files(path=URL)
 4. n_cross_validations=5 . This is the number of cross fold validations to perform. 
  
 ### Results
-*TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
+The best model through auto ml was VotingEnsemble model which had an accuracy score of 0.8766183574879227
 
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+**Improvements in Auto ML**
+1. The experiment timeout minutes could be increased.
+2. We can also increase cross validation number if we want higher accuracy.
+
+**RunDetails of Auto ML**
+![auto ml run details](https://user-images.githubusercontent.com/46073909/105363854-7fefd680-5c22-11eb-8e15-7df35bf0bce5.png)
+
+![auto ml acc chart](https://user-images.githubusercontent.com/46073909/105363847-7e261300-5c22-11eb-8c16-b0475a37adc1.png)
+
+**Auto ml Best Model**
+![auto ml best model](https://user-images.githubusercontent.com/46073909/105365030-d90c3a00-5c23-11eb-828b-e97b3fa5a53b.png)
+
+
+![automl best metric](https://user-images.githubusercontent.com/46073909/105363858-80886d00-5c22-11eb-893b-070bdd62195f.png)
 
 ## Hyperparameter Tuning
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
 
 
-### Results
-*TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
+### Results 
 
+*TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 
 ## Model Deployment
