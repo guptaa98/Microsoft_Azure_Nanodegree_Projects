@@ -36,8 +36,17 @@ URL = "https://raw.githubusercontent.com/guptaa98/Microsoft_Azure_Nanodegree_Pro
 ds = TabularDatasetFactory.from_delimited_files(path=URL)
 
 ## Automated ML
-*TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
 
+**automated ml settings** 
+1. experiment_timeout_minutes: 20. This is the setting which states that if an experiment doesn't conclude in 20 minutes then it will be cancelled.
+2. primary_metric: "accuracy". Since the primary metric is set as accuracy, so the models will be prioritised on the accuracy. The model with the highest accuracy will be termed as best model.
+
+**auto ml configuration**
+1. task - Since we have to predict if a person has a heart disease or not, this narrows down to classification task. So the task set here is Classification.
+2. training_data = The training data set here is 'dataset' which is x_train + y_train
+3. label_column_name='target'. This is the column which is to be predicted.
+4. n_cross_validations=5 . This is the number of cross fold validations to perform. 
+ 
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
 
