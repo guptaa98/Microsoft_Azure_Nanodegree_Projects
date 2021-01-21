@@ -110,7 +110,31 @@ The best model obtained from using hyperdrive gave and accuracy of 0.85714285714
 ![scatter chart](https://user-images.githubusercontent.com/46073909/105368139-381f7e00-5c27-11eb-87d9-5ce7dab355cc.png)
 
 ## Model Deployment
-*TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+Below steps are to be followed for model deployment.
+1. Save the best fitted model using joblib.dump
+joblib.dump(fitted_model, "best_automl_model.pkl") 
+The above code will save your best auto ml model to be deployed as best_automl_model.pkl
+
+2. Register the best model.
+We'll now register our model using Model.register from azureml.core.model. We'll pass our model path, model name and the workspace as the attributes. to Model.register. This can be achieved by Model.register(model_path="best_automl_model.pkl", model_name="best_automl_model", workspace = ws).
+
+3. Now for our Inference Configuration we'll need two files named as score.py and env.yml file. These files can be downloaded by using these two lines of code.
+   3.1. best_run.download_file('outputs/scoring_file_v_1_0_0.py', 'score.py')
+   3.2. best_run.download_file('outputs/conda_env_v_1_0_0.yml', 'myenv.yml')
+3. Since the files have been downloaded, define the inference_config by passing score.py and environment.
+![inf_config](https://user-images.githubusercontent.com/46073909/105370887-0f4cb800-5c2a-11eb-81cc-6a2c73046658.png)
+
+4. Define the deployment_conf. Deploy the model on AciWebservice. Refer to the screenshot below 
+![healthy dep state](https://user-images.githubusercontent.com/46073909/105371096-46bb6480-5c2a-11eb-9d56-a1c7dae40c40.png)
+
+5. In the above screenshot we can see that the model is successfully deployed.
+
+ 
+Let's proceed with a detailed description of every step above
+
+
+
+
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
