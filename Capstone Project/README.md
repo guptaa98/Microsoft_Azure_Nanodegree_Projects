@@ -29,7 +29,8 @@ This goal will be achieved by going through the other 13 attributes described ab
 
 ### Access
 The dataset is accessed by creating a TabularDataset using TabularDatasetFactory.
-Following is the code to achieve this. 
+Following is the code to achieve this.
+
 URL = "https://raw.githubusercontent.com/guptaa98/Microsoft_Azure_Nanodegree_Projects/main/Capstone%20Project/heart.csv"
 ds = TabularDatasetFactory.from_delimited_files(path=URL)
 
