@@ -129,18 +129,18 @@ We'll now register our model using Model.register from azureml.core.model. We'll
 
 5. In the above screenshot we can see that the model is successfully deployed.
 
- 
-Let's proceed with a detailed description of every step above
+6. Now let's test our deployed model by sending a request and see if the model gives a reponse in the desired format. We can achieve this by using the following code in which we send two sets of data and in the response we'll get the target values.
+![req1](https://user-images.githubusercontent.com/46073909/105372805-ffce6e80-5c2b-11eb-9e9a-4047453c52ab.png)
+![resp](https://user-images.githubusercontent.com/46073909/105372814-00ff9b80-5c2c-11eb-85c6-b72350740040.png)
 
+From the above screenshots we can see that our deployed model gives us a response back which is [0,0] . This is the target value for our dataset values which we sent as a request to the model. 
 
-
-
+**Hence, it can be concluded that our model is succesfully deployed and also gives a desired response back when a request is sent to it** 
 
 ## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
+**The link to the screencast is**
+
+*Remember that the screencast should demonstrate:
 - A working model
 - Demo of the deployed  model
-- Demo of a sample request sent to the endpoint and its response
-
-## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
+- Demo of a sample request sent to the endpoint and its response*
