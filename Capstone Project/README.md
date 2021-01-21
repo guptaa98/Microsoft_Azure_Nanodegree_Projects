@@ -66,13 +66,48 @@ The best model through auto ml was VotingEnsemble model which had an accuracy sc
 ![automl best metric](https://user-images.githubusercontent.com/46073909/105363858-80886d00-5c22-11eb-893b-070bdd62195f.png)
 
 ## Hyperparameter Tuning
-*TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
+### Logistic Regression
+This model is used when the value to be predicted is categorical. The problem we solved here was a binary classification problem having 2 categories with values 0 and 1 indicating absence and presence of disease hence this model was chosen.
+hyperdrive_run_config = HyperDriveConfig (estimator = estimator,
+                             hyperparameter_sampling = param_sampling,
+                             policy = early_termination_policy,
+                             primary_metric_name = "Accuracy",
+                             primary_metric_goal = PrimaryMetricGoal.MAXIMIZE,
+                             max_total_runs = 25,
+                             max_concurrent_runs = 3
+                             ).
+The description of hyperdrive configuration are as follows -
+1. A sklearn estimator is created for interacting with train.py file. The source directory, the entry script and compute target are passed to the variable estimator.
 
+2. Random Parameter Sampler is chosen to be used and is stored in param_sampling variable.The main benefits include its support for termination of low-performance runs and the other one is that it supports both continuos and discrete parameters.
+
+3. There were two parameters passed, one was continuos that is regularization parameter '--C' where a uniformly distributed value distributed between (0.05,0.1) will be chosen at every iteration and a discrete parameter '--max_iter' which had a choice of value between (16,32,64,128).
+
+4. Bandit Policy is used as an early stopping policy which terminates runs where the primary metric is not within the specified slack factor compared to the best performing run. The runs which have the primary metric value less than (best performing run metric/(1+slack_factor)) are terminated. Benefits of Choosing an Early Termination Policy helps to automatically terminate poorly performing runs. This early termination gives us computational efficiency. Bandit Policy helps in aggressive saving of the computational power more than other.
+It's parameters were
+ 4.1 slack_factor = 0.1
+ 4.2 evaluation_interval=2
+ 4.3 delay_evaluation=5 
+5. primary_metric_goal can be either PrimaryMetricGoal.MAXIMIZE or PrimaryMetricGoal.MINIMIZE determining if the primary metric will be maximized or minimized when evaluating the runs.The name of the primary metric needs to exactly match the name of the metric logged by the training script i.e. train.py and here it is Accuracy.
+
+6. max_total_runs contains the value maximum training runs that are to be run. The value should be between 1-1000. 
+here max_total_runs were 25. 
+7. max_concurrent_runs contains the maximum number of runs that can run concurrently i.e at the same time. If not specified, all runs launch in parallel. The value must be an integer between 1 and 100.
+Here the value chosen was 3. 
+
+**Improvements**
+1. The number of runs were only 25. These could have been increased to a higher number which could lead to a possibility of higher accuracy.
+2. We can also use some other primary metric and observe if that helps in improving our model.
 
 ### Results 
+The best model obtained from using hyperdrive gave and accuracy of 0.8571428571428571. Have a look at the run details and scatter charts and its parameters.
 
-*TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+**RunDetails Widget**
+![hd run details 1](https://user-images.githubusercontent.com/46073909/105368137-36ee5100-5c27-11eb-9275-00c7c80a68e7.png)
+
+![Acc chart ](https://user-images.githubusercontent.com/46073909/105368133-35bd2400-5c27-11eb-99f1-1adb44b5bc94.png)
+
+![scatter chart](https://user-images.githubusercontent.com/46073909/105368139-381f7e00-5c27-11eb-87d9-5ce7dab355cc.png)
 
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
