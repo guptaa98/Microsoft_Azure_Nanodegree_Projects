@@ -109,6 +109,10 @@ The best model obtained from using hyperdrive gave and accuracy of 0.85714285714
 
 ![scatter chart](https://user-images.githubusercontent.com/46073909/105368139-381f7e00-5c27-11eb-87d9-5ce7dab355cc.png)
 
+**HyperDrive Best Model**
+![hyperd best mdel ](https://user-images.githubusercontent.com/46073909/105396695-331df700-5c46-11eb-834c-9a29669223ea.png)
+
+
 ## Model Deployment
 Below steps are to be followed for model deployment.
 1. Save the best fitted model using joblib.dump
